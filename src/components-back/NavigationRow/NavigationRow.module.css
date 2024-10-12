@@ -1,0 +1,10 @@
+.navigationRow {
+    display: flex;
+    align-items: center;
+}
+
+.navigationRow > hr {
+    color: var(--tertiary-color);
+    height: 0px;
+    width: 16px;
+}

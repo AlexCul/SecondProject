@@ -1,0 +1,32 @@
+.navigationButton {
+    border: 1px solid var(--tertiary-color);
+    color: var(--secondary-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s background-color ease-in-out;
+}
+
+.navigationButton:hover {
+    background-color: var(--grey);
+}
+
+.primary {
+    color: var(--primary-color);
+}
+.navigationButton {
+    border: 1px solid var(--tertiary);
+    color: var(--secondary);
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s background-color ease-in-out;
+}
+
+.navigationButton:hover {
+    background-color: var(--grey);
+}
+
+.primary {
+    color: var(--primary);
+}

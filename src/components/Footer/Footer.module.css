@@ -1,0 +1,28 @@
+.footer {
+  padding: 0px 40px;
+  padding-bottom: 80px;
+}
+
+.footer > h3 {
+  font-size: 64px;
+}
+
+.footer > .map {
+  border-radius: 12px;
+  height: 350px;
+  overflow: hidden;
+}
+.footer {
+  padding: 0px 40px;
+  padding-bottom: 80px;
+}
+
+.footer > h3 {
+  font-size: 64px;
+}
+
+.footer > .map {
+  border-radius: 12px;
+  height: 350px;
+  overflow: hidden;
+}
