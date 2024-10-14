@@ -53,7 +53,7 @@ const useShoppingCartStore = create(
         },
       })),
       {
-        name: "shopping-cart-storage",
+        name: "shopping-cart",
         getStorage: () => localStorage,
       }
     )

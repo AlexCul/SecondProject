@@ -1,8 +1,11 @@
 import { create } from "zustand";
+import { immer } from "zustand/middleware/immer";
+import { devtools } from "zustand/middleware";
+import { persist } from "zustand/middleware";
 
 import axios from "axios";
 
-const useProductsStore = create((set, get) => ({
+const useProductsStore = create(devtools(persist(immer((set, get) => ({
     products: [],
 
     fetch: async () => {
@@ -13,7 +16,7 @@ const useProductsStore = create((set, get) => ({
         });
     },
 
-    byCategory: async (categoryId) => {
+    byCategory: (categoryId) => {
         let byCategory = [];
 
         for (let product of get().products) {
@@ -24,7 +27,7 @@ const useProductsStore = create((set, get) => ({
 
         return byCategory;
     },
-    discounted: async () => {
+    discounted: () => {
         let discounted = [];
 
         for (let product of get().products) {
@@ -35,6 +38,11 @@ const useProductsStore = create((set, get) => ({
 
         return discounted;
     },
-}));
+})),
+      {
+        name: "products",
+        getStorage: () => localStorage,
+      }
+)));
 
 export default useProductsStore;
