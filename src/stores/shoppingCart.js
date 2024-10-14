@@ -1,51 +1,64 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
+import { devtools } from "zustand/middleware";
+import { persist } from "zustand/middleware";
 
 const useShoppingCartStore = create(
-  immer((set, get) => ({
-    products: [],
+  devtools(
+    persist(
+      immer((set, get) => ({
+        products: {}, // Изначально пустой объект
 
-    push: (product) => {
-      set((state) => {
-        state.products.push(product);
-      });
-    },
-    remove: (productId) => {
-      set((state) => {
-        if (productId > -1) {
-          state.products.splice(productId, 1);
-        }
-      });
-    },
+        push: (product) => {
+          set((state) => {
+            if (state.products[product.id] == undefined) {
+                product.count = 1;
+            }
 
-    incrementCount: (productId) => {
-      set((state) => {
-        if (productId > -1) {
-          state.products[productId].count++;
-        }
-      });
-    },
-    decrementCount: (productId) => {
-      set((state) => {
-        if (productId > -1) {
-          state.products[productId].count--;
-        }
-      });
-    },
+            state.products[product.id] = product; // Добавляем продукт в объект
+          });
+        },
 
-    totalPrice: () => {
-      let totalPrice = 0;
+        remove: (productId) => {
+          set((state) => {
+            delete state.products[productId]; // Удаляем продукт по его id
+          });
+        },
 
-      for (let product of get().products) {
-        totalPrice +=
-          (product.discountPrice != null
-            ? product.discountPrice
-            : product.price) * product.count;
+        incrementCount: (productId) => {
+          set((state) => {
+            const product = state.products[productId];
+            if (product) {
+              product.count++; // Увеличиваем количество продукта
+            }
+          });
+        },
+
+        decrementCount: (productId) => {
+          set((state) => {
+            const product = state.products[productId];
+            if (product && product.count > 1) {
+              product.count--; // Уменьшаем количество продукта
+            }
+          });
+        },
+
+        totalPrice: () => {
+          let total = 0;
+          Object.values(get().products).forEach((product) => {
+            const price = product.discountPrice || product.price; // Берем цену со скидкой или обычную
+            total += price * product.count; // Умножаем на количество
+          });
+          return total;
+        },
+      })),
+      {
+        name: "shopping-cart-storage",
+        getStorage: () => localStorage,
       }
-
-      return totalPrice;
-    },
-  })),
+    )
+  )
 );
 
 export default useShoppingCartStore;
+

@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
+import useShoppingCartStore from "/src/stores/shoppingCart.js";
+
 import Button from "/src/components/Button/Button.jsx";
 
 function ProductCard({ product }) {
@@ -11,13 +13,24 @@ function ProductCard({ product }) {
 
     const navigate = useNavigate();
 
+    const push = useShoppingCartStore((state) => state.push);
+
     return (
-        <div className={styles.productCard} onMouseEnter={() => setCardHovered(true)} onMouseLeave={() => setCardHovered(false)} onClick={() => console.log('clicked product')}>
+        <div className={styles.productCard} onMouseEnter={() => setCardHovered(true)} onMouseLeave={() => setCardHovered(false)} >
                 <div className={styles.top}>
                 <span className={styles.discount} style={{
                     display: `${product.discountPrice != null ? "block" : "none"}`,
                 }}>-{Math.floor(100 - (product.discountPrice * 100 / product.price))}%</span>
-                <Button initialText="Add to cart" clickedText="Added" onClick={() => {}} dependencies={{}} style={{
+                <Button initialText="Add to cart" clickedText="Added" onClick={(dependencies) => {
+                        const push = dependencies.push;
+                        const product = dependencies.product;
+
+                        push(product);
+                        console.log("pushe mf");
+                }} dependencies={{
+                    push: push,
+                    product: product,
+                }} style={{
                     opacity: `${isCardHovered ? 1 : 0}`,
                     position: "absolute",
                     top: "210px",
