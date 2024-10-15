@@ -10,8 +10,8 @@ function Product() {
     const products = useProductsStore((state) => state.products);
     const fetch = useProductsStore((state) => state.fetch);
 
-    useEffect(async () => {
-        await fetch();
+    useEffect(() => {
+        (async () => await fetch())();
     }, []);
 
     const { productId } = useParams();
