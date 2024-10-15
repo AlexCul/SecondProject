@@ -11,6 +11,10 @@ const useCategoriesStore = create((set) => ({
             categories: await response.data,
         });
     },
+
+    byId: (id) => {
+        return categories[id-1];
+    },
 }));
 
 export default useCategoriesStore;
