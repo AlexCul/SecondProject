@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Home from "/src/views/Home/Home.jsx";
+import Product from "/src/views/Product/Product.jsx";
 import Products from "/src/views/Products/Products.jsx";
 import Categories from "/src/views/Categories/Categories.jsx";
 import ShoppingCart from "/src/views/ShoppingCart/ShoppingCart.jsx";
@@ -22,6 +23,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/products" element={<Products />}></Route>
+            <Route path="/products/:productId" element={<Product />}></Route>
             <Route path="/categories" element={<Categories />}></Route>
             <Route path="/shopping-cart" element={<ShoppingCart />}></Route>
             <Route path="*" element={<PageNotFound />}></Route>
