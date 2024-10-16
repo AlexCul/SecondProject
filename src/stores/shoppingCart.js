@@ -9,11 +9,9 @@ const useShoppingCartStore = create(
       immer((set, get) => ({
         products: {}, // Изначально пустой объект
 
-        push: (product) => {
+        push: (product, count = 1) => {
           set((state) => {
-            if (state.products[product.id] == undefined) {
-                product.count = 1;
-            }
+            product.count = count;
 
             state.products[product.id] = product; // Добавляем продукт в объект
           });
