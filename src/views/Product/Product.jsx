@@ -1,27 +1,44 @@
 import styles from "./Product.module.css";
 
+import Loader from "/src/components/Loader/Loader.jsx";
 import NavigationRow from "/src/components/NavigationRow/NavigationRow.jsx";
 
 import { useParams } from "react-router-dom";
 import useProductsStore from "/src/stores/products.js";
-import { useEffect } from "react";
+import useCategoriesStore from "/src/stores/categories.js";
+import { useState, useEffect } from "react";
 
 function Product() {
-    const products = useProductsStore((state) => state.products);
-    const fetch = useProductsStore((state) => state.fetch);
+    const fetchProducts = useProductsStore(state => state.fetch);
+    const productById = useProductsStore(state => state.byId);
+
+    const fetchCategories = useCategoriesStore(state => state.fetch);
+    const categoryById = useCategoriesStore(state => state.byId);
+
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        (async () => await fetch())();
+        (async () => {
+            await fetchProducts();
+            await fetchCategories();
+            setLoading(false);
+        })();
     }, []);
 
+    if (isLoading) return <Loader />;
+
     const { productId } = useParams();
+
+    const product = productById(productId);
+    const category = categoryById(product.categoryId);
 
     return (
         <>
             <NavigationRow buttons={[
                 { text: "Main Page", route: "/" },
                 { text: "Categories", route: "/categories" },
-                { text: products[productId - 1].title, route: "/products" },
+                { text: category.title, route: `/categories/${category.id}` },
+                { text: product.title, route: `/products/${product.id}` },
             ]} />
             <section>{productId}</section>
         </>
