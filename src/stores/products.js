@@ -28,7 +28,7 @@ const useProductsStore = create(devtools(persist(immer((set, get) => ({
         return byCategory;
     },
     byId: (id) => {
-        return products[id-1];
+        return get().products[id-1];
     },
 
     discounted: () => {
