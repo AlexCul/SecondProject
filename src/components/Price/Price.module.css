@@ -1,3 +1,8 @@
+.price {
+    display: flex;
+    align-items: end;
+}
+
 .primaryPrice {
     font-size: 40px;
     color: var(--primary);
@@ -10,4 +15,16 @@
     font-weight: 500;
     text-decoration: line-through;
     margin-left: 16px;
+}
+
+.discount {
+    margin-left: 16px;
+    margin-bottom: auto;
+    width: 67px;
+    text-align: center;
+    border-radius: var(--small-radius);
+    background-color: var(--blue);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
 }
