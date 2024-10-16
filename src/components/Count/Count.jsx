@@ -5,7 +5,7 @@ import { useState } from "react";
 function Count({ product }) {
     if (!product.count) product.count = 1;
 
-    const [count, setCount] = useState(product.count );
+    const [count, setCount] = useState(product.count);
 
     function decrement() {
         if (count > 1) {
