@@ -1,5 +1,6 @@
 import styles from "./Product.module.css";
 
+import Price from "/src/components/Price/Price.jsx";
 import Loader from "/src/components/Loader/Loader.jsx";
 import NavigationRow from "/src/components/NavigationRow/NavigationRow.jsx";
 
@@ -40,7 +41,13 @@ function Product() {
                 { text: category.title, route: `/categories/${category.id}` },
                 { text: product.title, route: `/products/${product.id}` },
             ]} />
-            <section>{productId}</section>
+            <section className={styles.product}>
+                <img src={`http://localhost:3333/${product.image}`} />
+                <div>
+                    <h3>{product.title}</h3>
+                    <Price product={product} />
+                </div>
+            </section>
         </>
     );
 }
