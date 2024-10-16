@@ -1,5 +1,10 @@
 .count {
     display: flex;
+    border: 1px solid var(--tertiary);
+    border-radius: var(--small-radius);
+    width: 200px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .count > button {
@@ -8,7 +13,12 @@
     border-radius: var(--small-radius);
     border: 1px solid var(--tertiary);
     color: var(--secondary);
-    font-size: 20px;
+    font-size: 36px;
     background-color: white;
     transition: 0.2s background-color ease-in-out;
+}
+
+.count > span {
+    font-size: 20px;
+    font-weight: 600;
 }
