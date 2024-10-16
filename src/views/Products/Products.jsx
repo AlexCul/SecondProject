@@ -14,7 +14,7 @@ function Products() {
 
     useEffect(() => {
         (async () => {
-            fetch();
+            await fetch();
         })();
     }, []);
 
