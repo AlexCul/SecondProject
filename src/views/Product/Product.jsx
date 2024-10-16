@@ -1,5 +1,6 @@
 import styles from "./Product.module.css";
 
+import Count from "/src/components/Count/Count.jsx";
 import Price from "/src/components/Price/Price.jsx";
 import Loader from "/src/components/Loader/Loader.jsx";
 import NavigationRow from "/src/components/NavigationRow/NavigationRow.jsx";
@@ -46,6 +47,7 @@ function Product() {
                 <div>
                     <h3>{product.title}</h3>
                     <Price product={product} />
+                    <Count product={product} />
                 </div>
             </section>
         </>
