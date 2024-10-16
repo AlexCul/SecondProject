@@ -1,0 +1,14 @@
+.count {
+    display: flex;
+}
+
+.count > button {
+    width: 58px;
+    height: 58px;
+    border-radius: var(--small-radius);
+    border: 1px solid var(--tertiary);
+    color: var(--secondary);
+    font-size: 20px;
+    background-color: white;
+    transition: 0.2s background-color ease-in-out;
+}
