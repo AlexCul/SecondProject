@@ -49,6 +49,11 @@ const useShoppingCartStore = create(
           });
           return total;
         },
+        totalCount: () => {
+            let total = 0;
+            Object.values(get().products).forEach((product) => total += product.count);
+            return total;
+        },
       })),
       {
         name: "shopping-cart",
