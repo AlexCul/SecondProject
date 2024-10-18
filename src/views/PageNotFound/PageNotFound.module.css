@@ -1,0 +1,18 @@
+section.notFound {
+    margin-top: 40px;
+    text-align: center;
+}
+
+section.notFound > h3 {
+    font-size: 64px;
+    font-weight: 700;
+}
+
+section.notFound > p {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--secondary);
+    width: 664px;
+    margin: 0px auto;
+    margin-top: 32px;
+}
