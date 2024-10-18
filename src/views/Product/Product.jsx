@@ -2,12 +2,16 @@ import styles from "./Product.module.css";
 
 import Count from "/src/components/Count/Count.jsx";
 import Price from "/src/components/Price/Price.jsx";
+import Button from "/src/components/Button/Button.jsx";
 import Loader from "/src/components/Loader/Loader.jsx";
 import NavigationRow from "/src/components/NavigationRow/NavigationRow.jsx";
 
 import { useParams } from "react-router-dom";
+
 import useProductsStore from "/src/stores/products.js";
 import useCategoriesStore from "/src/stores/categories.js";
+import useShoppingCartStore from "/src/stores/shoppingCart.js";
+
 import { useState, useEffect } from "react";
 
 function Product() {
@@ -16,6 +20,8 @@ function Product() {
 
     const fetchCategories = useCategoriesStore(state => state.fetch);
     const categoryById = useCategoriesStore(state => state.byId);
+
+    const push = useShoppingCartStore((state) => state.push);
 
     const [isLoading, setLoading] = useState(true);
 
@@ -48,6 +54,9 @@ function Product() {
                     <h3>{product.title}</h3>
                     <Price product={product} />
                     <Count product={product} />
+                    <Button initialText="Add to cart" clickedText="Added" onClick={(dependencies) => push(dependencies.product)} dependencies={{product: product}} style={{
+                        width: "316px",
+                    }} />
                 </div>
             </section>
         </>
