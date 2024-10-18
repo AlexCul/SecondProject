@@ -22,7 +22,8 @@
 }
 
 body > #root > main > *:not(.notCentered) {
-    margin: auto 40px;
+    margin-right: 40px;
+    margin-left: 40px;
 }
 
 body > #root > header {
