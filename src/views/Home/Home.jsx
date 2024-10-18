@@ -39,7 +39,7 @@ function Home() {
     <>
       <section className={`${styles.head} notCentered`}>
         <h1>Amazing Discounts on Pets Products!</h1>
-        <Button initialText="Check out" clickedText="Redirecting..." onClick={() => {}} dependencies={{}} style={{width: "218px", marginTop: "32px"}} />
+        <Button initialText="Check out" clickedText="Redirecting..." onClick={() => {}} dependencies={{}} style={{width: "218px", marginTop: "40px"}} />
       </section>
       <section className={styles.categories}>
         <SectionBar title="Categories" button={{ text: "All categories", route: "/categories" }} />

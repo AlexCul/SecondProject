@@ -1,0 +1,53 @@
+section.head {
+    background-image: url("/src/assets/images/head-wallpaper.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -40px;
+    height: 600px;
+    padding: 80px 40px;
+}
+
+section.head > h1 {
+    font-size: 96px;
+    color: white;
+    font-weight: 700;
+    line-height: 105.6px;
+}
+
+section.categories {
+    margin-top: 80px;
+}
+
+section.categories > .cards {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
+    grid-gap: 32px;
+}
+
+section.discount {
+    margin-top: 106px;
+    background: rgb(36,81,198);
+    background: linear-gradient(90deg, rgba(13,80,255,1) 0%, rgba(36,81,198,1) 35%);
+    padding: 32px;
+    border-radius: var(--big-radius);
+}
+
+section.discount > h2 {
+    font-size: 64px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+}
+
+section.sale {
+    margin-top: 80px;
+}
+
+section.sale > .discountCards {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
+    grid-gap: 32px;
+}
