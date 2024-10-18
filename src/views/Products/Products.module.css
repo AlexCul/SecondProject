@@ -1,0 +1,5 @@
+section.products > .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
+    grid-gap: 32px;
+}

@@ -24,9 +24,11 @@ function Products() {
             { text: "Main page", route: "/" },
             { text: "All products", route: "/products" },
         ]} />
-        <SectionTitle content="All products" />
         <section className={styles.products}>
-            { products.map((product) => <ProductCard product={product} key={product.id} />) }
+            <SectionTitle content="All products" />
+            <div className={styles.cards}>
+                { products.map((product) => <ProductCard product={product} key={product.id} />) }
+            </div>
         </section>
         </>
     );
