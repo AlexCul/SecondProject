@@ -16,7 +16,7 @@ function Header() {
           <a href="/products">All products</a>
           <a href="#">All sales</a>
         </div>
-        <a href="shopping-cart">
+        <a href="/shopping-cart">
           <img src={Icon} alt="icon" />
         </a>
       </nav>
