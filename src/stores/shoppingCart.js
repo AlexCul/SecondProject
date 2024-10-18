@@ -11,7 +11,7 @@ const useShoppingCartStore = create(
 
         push: (product, count = 1) => {
           set((state) => {
-            product.count = count;
+            if (!product.count) product.count = count;
 
             state.products[product.id] = product; // Добавляем продукт в объект
           });
