@@ -1,4 +1,5 @@
 .orderForm {
+    max-height: 528px;
     max-width: 548px;
     background-color: var(--grey);
     border-radius: var(--big-radius);
