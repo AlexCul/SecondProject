@@ -15,12 +15,15 @@ function ProductCard({ product }) {
 
     const push = useShoppingCartStore((state) => state.push);
 
+    const handleCardClick = () => navigate(`/products/${product.id}`);
+
     return (
-        <div className={styles.productCard} onMouseEnter={() => setCardHovered(true)} onMouseLeave={() => setCardHovered(false)} >
+        <div className={styles.productCard} onMouseEnter={() => setCardHovered(true)} onMouseLeave={() => setCardHovered(false)} onClick={handleCardClick}>
                 <div className={styles.top}>
                 <span className={styles.discount} style={{
                     display: `${product.discountPrice != null ? "block" : "none"}`,
                 }}>-{Math.floor(100 - (product.discountPrice * 100 / product.price))}%</span>
+                <div onClick={(event) => event.stopPropagation()}>
                 <Button initialText="Add to cart" clickedText="Added" onClick={(dependencies) => {
                         const push = dependencies.push;
                         const product = dependencies.product;
@@ -37,6 +40,7 @@ function ProductCard({ product }) {
                     left: "16px",
                     width: "284px",
                 }} />
+                </div>
                 <img src={`http://localhost:3333/${product.image}`} width="316" height="284" />
                 </div>
                 <div className={styles.bottom}>
