@@ -4,6 +4,7 @@ import styles from "./Sales.module.css";
 
 import useProductsStore from "/src/stores/products.js";
 
+import Filters from "/src/components/Filters/Filters.jsx";
 import ProductCard from "/src/components/ProductCard/ProductCard.jsx";
 import SectionTitle from "/src/components/SectionTitle/SectionTitle.jsx";
 import NavigationRow from "/src/components/NavigationRow/NavigationRow.jsx";
@@ -30,6 +31,11 @@ function Sales() {
         ]} />
         <section className={styles.sales}>
             <SectionTitle content="Discounted Items" />
+            <Filters products={products} setProducts={setProducts} features={{
+                price: true,
+                discounted: false,
+                sorted: true,
+            }} />
             <div className={styles.cards}>
                 { products.map((product) => <ProductCard product={product} key={product.id} />) }
             </div>
