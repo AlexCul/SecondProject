@@ -4,7 +4,7 @@ section.shoppingCart {
 }
 
 section.shoppingCart > .cards {
-    max-width: 780px;
+    width: 780px;
 }
 
 section.shoppingCart > .cards > div {
