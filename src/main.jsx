@@ -1,6 +1,11 @@
 import { createRoot } from "react-dom/client";
 
+import { useEffect } from "react";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import useProductsStore from "/src/stores/products.js";
+import useCategoriesStore from "/src/stores/categories.js";
 
 import "./App.css";
 
@@ -17,6 +22,16 @@ import Header from "/src/components/Header/Header.jsx";
 import Footer from "/src/components/Footer/Footer.jsx";
 
 export default function App() {
+  const fetchProducts = useProductsStore(state => state.fetch);
+  const fetchCategories = useCategoriesStore(state => state.fetch);
+
+  useEffect(() => {
+    (async () => {
+        await fetchProducts();
+        await fetchCategories();
+    })();
+  }, []);
+
   return (
     <>
       <Header />
