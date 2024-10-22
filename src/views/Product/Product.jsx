@@ -57,7 +57,11 @@ function Product() {
                 <img src={`http://localhost:3333/${product.image}`} />
                 <div>
                     <h3>{product.title}</h3>
-                    <Price product={product} />
+                    <Price product={product} fontSizes={{
+                        primaryPrice: "64px",
+                        secondaryPrice: "40px",
+                        discount: "20px",
+                    }} />
                     <div className={styles.countAndButton}>
                     <Count product={product} />
                     <Button initialText="Add to cart" clickedText="Added" onClick={(dependencies) => push(dependencies.product)} dependencies={{product: product}} style={{
