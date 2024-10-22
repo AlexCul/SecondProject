@@ -5,6 +5,8 @@ import styles from "./Footer.module.css";
 import Viber from "/src/assets/images/icons/socials/viber.svg";
 import Instagram from "/src/assets/images/icons/socials/instagram.svg";
 
+import GoogleMapMarker from "/src/assets/images/icons/marker.svg";
+
 function Footer() {
   const defaultProps = {
     center: {
@@ -14,7 +16,10 @@ function Footer() {
     zoom: 18,
   };
   const Map = ({ text }) => (
-    <div style={{ height: "100px" }}>{text}</div>
+    <div style={{ height: "100px" }}>
+      <img src={GoogleMapMarker} width="40" />
+      <strong style={{fontSize: "16px", color: "white"}}>{text}</strong>
+    </div>
   );
 
   return (
