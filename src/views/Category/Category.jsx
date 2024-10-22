@@ -21,11 +21,7 @@ function Products() {
     const fetch = useProductsStore(state => state.fetch);
 
     useEffect(() => {
-        (async () => {
-            await fetch();
-
-            byCategory(categoryId);
-        })();
+        byCategory(categoryId);
     }, []);
     
     const [products, setProducts] = useState(byCategory(categoryId));

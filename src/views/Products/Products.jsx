@@ -2,7 +2,7 @@ import styles from "./Products.module.css";
 
 import useProductsStore from "/src/stores/products.js";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Filters from "/src/components/Filters/Filters.jsx";
 import ProductCard from "/src/components/ProductCard/ProductCard.jsx";
@@ -11,15 +11,8 @@ import NavigationRow from "/src/components/NavigationRow/NavigationRow.jsx";
 
 function Products() {
     const storeProducts = useProductsStore(state => state.products);
-    const fetch = useProductsStore(state => state.fetch);
 
     const [products, setProducts] = useState(storeProducts);
-
-    useEffect(() => {
-        (async () => {
-            await fetch();
-        })();
-    }, []);
 
     return (
         <>

@@ -28,9 +28,7 @@ function Home() {
   const setEmail = useUserStore((state) => state.setEmail);
 
   const categories = useCategoriesStore((state) => state.categories);
-  const fetchCategories = useCategoriesStore((state) => state.fetch);
 
-  const fetchProducts = useProductsStore((state) => state.fetch);
   const discounted = useProductsStore((state) => state.discounted);
 
   const [isDiscountButtonActivated, setDiscountButtonActivated] = useState(true);
@@ -72,10 +70,6 @@ function Home() {
 
   useEffect(() => {
         (async () => {
-            await fetchCategories();
-            
-            await fetchProducts();
-            
             const products = await discounted();
             products.sort((first, second) => 0.5 - Math.random());
 

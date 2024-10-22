@@ -15,10 +15,8 @@ import useShoppingCartStore from "/src/stores/shoppingCart.js";
 import { useState, useEffect } from "react";
 
 function Product() {
-    const fetchProducts = useProductsStore(state => state.fetch);
     const productById = useProductsStore(state => state.byId);
 
-    const fetchCategories = useCategoriesStore(state => state.fetch);
     const categoryById = useCategoriesStore(state => state.byId);
 
     const push = useShoppingCartStore((state) => state.push);
@@ -29,8 +27,7 @@ function Product() {
 
     useEffect(() => {
         (async () => {
-            await fetchProducts();
-            await fetchCategories();
+            await new Promise(r => setTimeout(r, 2000));
             setLoading(false);
         })();
     }, []);

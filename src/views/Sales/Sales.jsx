@@ -13,12 +13,9 @@ function Sales() {
     const [products, setProducts] = useState([]);
 
     const discounted = useProductsStore(state => state.discounted);
-    const fetch = useProductsStore(state => state.fetch);
 
     useEffect(() => {
         (async () => {
-            await fetch();
-
             setProducts(await discounted());
         })()
     }, []);

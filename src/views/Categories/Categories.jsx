@@ -1,7 +1,5 @@
 import styles from "./Categories.module.css";
 
-import { useEffect } from "react";
-
 import useCategoriesStore from "/src/stores/categories.js";
 
 import CategoryCard from "/src/components/CategoryCard/CategoryCard.jsx";
@@ -10,13 +8,6 @@ import NavigationRow from "/src/components/NavigationRow/NavigationRow.jsx";
 
 function Categories() {
     const categories = useCategoriesStore(state => state.categories);
-    const fetch = useCategoriesStore(state => state.fetch);
-
-    useEffect(() => {
-        (async () => {
-            await fetch();
-        })();
-    });
 
     return (
         <>
