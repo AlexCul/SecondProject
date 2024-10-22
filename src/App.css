@@ -34,3 +34,10 @@ body > #root > header {
 body > #root > footer {
     margin-top: var(--footer-margin-top);
 }
+
+@media screen and (max-width: 768px) {
+    body > #root > main > *:not(.notCentered) {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}

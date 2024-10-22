@@ -98,3 +98,19 @@ section.sale > .discountCards {
     grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
     grid-gap: 32px;
 }
+
+@media screen and (max-width: 768px) {
+    section.head > h1 {
+        font-size: 52px;
+        line-height: 64px;
+    }
+
+    section.discount > .bottom {
+        flex-direction: column;
+    }
+
+    section.discount > .bottom > form {
+        width: 100%;
+    }
+}
+

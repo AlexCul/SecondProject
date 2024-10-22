@@ -76,3 +76,12 @@
     border: 1px solid var(--black);
     cursor: not-allowed;
 }
+
+@media screen and (max-width: 768px) {
+    .orderForm > form {
+        width: 100%;
+    }
+    .orderForm > .price > span.price {
+        font-size: 48px;
+    }
+}

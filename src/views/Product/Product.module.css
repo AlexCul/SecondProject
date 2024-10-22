@@ -7,7 +7,6 @@ section.product {
 
 section.product > img {
     border-radius: var(--big-radius);
-    max-height: 572px;
 }
 
 section.product > div {
@@ -50,4 +49,33 @@ section.product > div > .description > a {
 
 section.product > div > .description > a:hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    section.product {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section.product > img {
+        width: 100%;
+    }
+
+    section.product > div {
+        margin-left: 0px;
+    }
+
+    section.product > div > h3 {
+        margin-top: 16px;
+    }
+
+    section.product > div > .countAndButton {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section.product > div > .countAndButton > button {
+        margin-top: 12px;
+    }
 }
