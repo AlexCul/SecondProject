@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "./Filters.module.css";
 
+import CheckedIcon from "/src/assets/images/icons/checkbox-checked.svg";
+
 function Filters({ products, setProducts }) {
     const [filters, setFilters] = useState({
         from: '',
@@ -108,6 +110,7 @@ function Filters({ products, setProducts }) {
                 checked={filters.discounted}
                 onChange={handleDiscountedChange}
             />
+            <img className={styles.checkboxIcon} src={CheckedIcon} style={{display: filters.discounted ? "block" : "none"}} />
             <label htmlFor="sorted">Sorted</label>
             <select
                 name="sorted"
@@ -115,7 +118,7 @@ function Filters({ products, setProducts }) {
                 value={filters.sorted}
                 onChange={handleSortedChange}
             >
-                <option value="1">by default</option>
+                <option value="1" selected disabled>by default</option>
                 <option value="2">newest</option>
                 <option value="3">price high-low</option>
                 <option value="4">price low-high</option>
