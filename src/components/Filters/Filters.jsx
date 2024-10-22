@@ -3,7 +3,11 @@ import styles from "./Filters.module.css";
 
 import CheckedIcon from "/src/assets/images/icons/checkbox-checked.svg";
 
-function Filters({ products, setProducts }) {
+function Filters({ products, setProducts, features = {
+    price: true,
+    discounted: true,
+    sorted: true,
+} }) {
     const [filters, setFilters] = useState({
         from: '',
         to: '',
@@ -86,8 +90,13 @@ function Filters({ products, setProducts }) {
         applyFilters(newFilters);
     };
 
-    return (
-        <form className={styles.filters}>
+    let price;
+    let discounted;
+    let sorted;
+
+    if (features.price) {
+        price = (
+            <>
             <label htmlFor="from">Price</label>
             <input
                 type="text"
@@ -103,6 +112,13 @@ function Filters({ products, setProducts }) {
                 value={filters.to}
                 onChange={handlePriceToChange}
             />
+            </>
+        );
+    }
+
+    if (features.discounted) {
+        discounted = (
+            <>
             <label htmlFor="discounted">Discounted items</label>
             <input
                 type="checkbox"
@@ -111,6 +127,14 @@ function Filters({ products, setProducts }) {
                 onChange={handleDiscountedChange}
             />
             <img className={styles.checkboxIcon} src={CheckedIcon} style={{display: filters.discounted ? "block" : "none"}} />
+
+            </>
+        );
+    }
+
+    if (features.sorted) {
+        sorted = (
+            <>
             <label htmlFor="sorted">Sorted</label>
             <select
                 name="sorted"
@@ -123,6 +147,16 @@ function Filters({ products, setProducts }) {
                 <option value="3">price high-low</option>
                 <option value="4">price low-high</option>
             </select>
+
+            </>
+        );
+    }
+
+    return (
+        <form className={styles.filters}>
+            {price}
+            {discounted}
+            {sorted}
         </form>
     );
 }
