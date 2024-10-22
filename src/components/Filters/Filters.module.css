@@ -1,0 +1,18 @@
+.filters {
+    display: flex;
+    align-items: center;
+}
+
+.filters > label {
+    font-weight: 600;
+    color: var(--black);
+    font-size: 20px;
+}
+
+.filters > input[type="text"] {
+    border-radius: var(--small-radius);
+    border: 1px solid var(--tertiary);
+    padding: 8px 16px;
+    width: 112px;
+    margin-left: 16px;
+}
