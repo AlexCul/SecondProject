@@ -14,7 +14,7 @@ function Header() {
           <a href="/">Main Page</a>
           <a href="/categories">Categories</a>
           <a href="/products">All products</a>
-          <a href="#">All sales</a>
+          <a href="/sales">All sales</a>
         </div>
         <a href="/shopping-cart">
           <img src={Icon} alt="icon" />
