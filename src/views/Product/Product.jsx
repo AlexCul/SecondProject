@@ -22,6 +22,9 @@ function Product() {
     const push = useShoppingCartStore((state) => state.push);
 
     const [isLoading, setLoading] = useState(true);
+    const [isTextShortened, setTextShortened] = useState(true);
+
+    const maxShortenedLength = 700;
 
     const { productId } = useParams();
 
@@ -36,6 +39,11 @@ function Product() {
 
     const product = productById(productId);
     const category = categoryById(product.categoryId);
+
+    function appendEllipsis(text) {
+        if (text.length < maxShortenedLength) return text;
+        return text.slice(0, maxShortenedLength).trim() + '...';
+    }
 
     return (
         <>
@@ -58,8 +66,10 @@ function Product() {
                     </div>
                     <div className={styles.description}>
                     <h4>Description</h4>
-                    <p>{product.description}</p>
-                    <a onClick={() => alert("Not implemented")}>Read more</a>
+                    <p>{isTextShortened ? appendEllipsis(product.description) : product.description}</p>
+                    <a onClick={() => setTextShortened(!isTextShortened)} style={{
+                        display: `${product.description.length <= maxShortenedLength ? "none" : "block"}`,
+                    }}>{isTextShortened ? "Read more" : "Read less"}</a>
                     </div>
                 </div>
             </section>

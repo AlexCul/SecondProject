@@ -37,13 +37,6 @@ section.product > div > h4 {
 }
 
 section.product > div > .description > p {
-    display: -webkit-box;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -webkit-line-clamp: 10; 
-      line-height: 20.8px; 
-      max-height: calc(20.8px * 10);
     font-size: 16px;
     font-weight: 400;
     color: var(--black);
