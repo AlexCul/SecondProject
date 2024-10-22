@@ -41,6 +41,53 @@ section.discount > h2 {
     text-align: center;
 }
 
+section.discount > .bottom {
+    display: flex;
+}
+
+section.discount > .bottom > form {
+    display: flex;
+    flex-direction: column;
+    width: 516px;
+    justify-content: center;
+}
+
+section.discount > .bottom > form > p {
+    color: white;
+}
+
+section.discount > .bottom > form > input {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 16px 32px;
+}
+
+section.discount > .bottom > form > input[type="text"] {
+    margin-bottom: 16px;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: var(--small-radius);
+}
+
+section.discount > .bottom > form > input[type="submit"] {
+    margin-top: 16px;
+    transition: 0.3s background-color ease-in-out, color ease-in-out, border ease-in-out;
+    border: none;
+    border-radius: var(--small-radius);
+}
+
+section.discount > .bottom > form > input[type="submit"]:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+section.discount > .bottom > form > input[type="submit"]:disabled {
+    background: transparent;
+    color: var(--blue);
+}
+
 section.sale {
     margin-top: 80px;
 }

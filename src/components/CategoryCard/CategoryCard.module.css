@@ -4,26 +4,15 @@
     display: inline-grid;
 }
 
-.card > img {
+.card > a {
+    text-decoration: none;
+}
+
+.card > a > img {
     max-width: 316px;
 }
 
-.card > span {
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 16px;
-}
-.card {
-    max-width: 316px;
-    text-align: center;
-    display: inline-grid;
-}
-
-.card > img {
-    max-width: 316px;
-}
-
-.card > span {
+.card > a > span {
     font-size: 20px;
     font-weight: 500;
     margin-top: 16px;

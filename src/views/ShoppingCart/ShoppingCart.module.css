@@ -1,0 +1,12 @@
+section.shoppingCart {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.shoppingCart > .cards {
+    max-width: 780px;
+}
+
+section.shoppingCart > .cards > div {
+    margin-bottom: 16px;
+}
