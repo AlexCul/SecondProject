@@ -2,7 +2,7 @@ import styles from "./Count.module.css";
 
 import { useState } from "react";
 
-function Count({ product }) {
+function Count({ product, customFunctions = undefined }) {
     if (!product.count) product.count = 1;
 
     const [count, setCount] = useState(product.count);
@@ -19,10 +19,24 @@ function Count({ product }) {
         setCount(count + 1);
     }
 
+    function getCount() {
+        return count;
+    }
+
+    if (customFunctions) {
+        return (
+            <div className={styles.count}>
+                <button onClick={customFunctions.decrement}>-</button>
+                <span>{customFunctions.getCount()}</span>
+                <button onClick={customFunctions.increment}>+</button>
+            </div>
+        );
+    }
+
     return (
     <div className={styles.count}>
         <button onClick={decrement}>-</button>
-        <span>{count}</span>
+        <span>{getCount()}</span>
         <button onClick={increment}>+</button>
     </div>
     );
