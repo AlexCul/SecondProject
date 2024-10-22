@@ -54,6 +54,12 @@ const useShoppingCartStore = create(
             Object.values(get().products).forEach((product) => total += product.count);
             return total;
         },
+
+        clear: () => {
+            set((state) => {
+                state.products = {};
+            });
+        }
       })),
       {
         name: "shopping-cart",
