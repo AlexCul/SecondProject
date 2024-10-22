@@ -1,17 +1,15 @@
-import axios from "axios";
-
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 import { devtools } from "zustand/middleware";
 import { persist } from "zustand/middleware";
 
+import { get as getCategories } from "/src/services/categories.js";
+
 const useCategoriesStore = create(devtools(persist(immer((set, get) => ({
     categories: [],
     fetch: async () => {
-        const response = await axios.get("http://localhost:3333/categories/all");
-
         set({
-            categories: await response.data,
+            categories: await getCategories(),
         });
     },
 

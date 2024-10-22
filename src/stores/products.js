@@ -3,16 +3,14 @@ import { immer } from "zustand/middleware/immer";
 import { devtools } from "zustand/middleware";
 import { persist } from "zustand/middleware";
 
-import axios from "axios";
+import { get as getProducts } from "/src/services/products.js";
 
 const useProductsStore = create(devtools(persist(immer((set, get) => ({
     products: [],
 
     fetch: async () => {
-        const products = await axios.get("http://localhost:3333/products/all");
-
         set({
-            products: await products.data,
+            products: await getProducts(),
         });
     },
 
@@ -31,7 +29,7 @@ const useProductsStore = create(devtools(persist(immer((set, get) => ({
         return get().products[id-1];
     },
 
-    discounted: () => {
+    discounted: async () => {
         let discounted = [];
 
         for (let product of get().products) {
