@@ -53,10 +53,17 @@ function Product() {
                 <div>
                     <h3>{product.title}</h3>
                     <Price product={product} />
+                    <div className={styles.countAndButton}>
                     <Count product={product} />
                     <Button initialText="Add to cart" clickedText="Added" onClick={(dependencies) => push(dependencies.product)} dependencies={{product: product}} style={{
                         width: "316px",
                     }} />
+                    </div>
+                    <div className={styles.description}>
+                    <h4>Description</h4>
+                    <p>{product.description}</p>
+                    <a onClick={() => alert("Not implemented")}>Read more</a>
+                    </div>
                 </div>
             </section>
         </>
