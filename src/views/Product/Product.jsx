@@ -25,6 +25,8 @@ function Product() {
 
     const [isLoading, setLoading] = useState(true);
 
+    const { productId } = useParams();
+
     useEffect(() => {
         (async () => {
             await fetchProducts();
@@ -34,8 +36,6 @@ function Product() {
     }, []);
 
     if (isLoading) return <Loader />;
-
-    const { productId } = useParams();
 
     const product = productById(productId);
     const category = categoryById(product.categoryId);
