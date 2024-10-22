@@ -2,8 +2,8 @@ header > nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 128px;
   border-bottom: 1px solid #dddddd;
+  padding: 30px 40px;
 }
 
 header > nav > a {
@@ -21,36 +21,25 @@ header > nav > a {
   text-decoration: none;
   color: black;
   transition: 0.2s color ease-in-out;
+  text-align: center;
 }
 
 .links > a:hover {
   color: #0d50ff;
 }
-header > nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 128px;
-  border-bottom: 1px solid #dddddd;
-}
 
-header > nav > a {
-  margin: 0px 40px;
-  font-weight: 500;
-}
+@media screen and (max-width: 750px) {
+    header > nav {
+        flex-direction: column;
+        padding: 8px 0px;
+    }
 
-.links {
-  width: 518px;
-  display: flex;
-  justify-content: space-between;
-}
+    .links {
+        flex-direction: column;
+    }
 
-.links > a {
-  text-decoration: none;
-  color: black;
-  transition: 0.2s color ease-in-out;
-}
-
-.links > a:hover {
-  color: #0d50ff;
+    .links > a {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
 }
