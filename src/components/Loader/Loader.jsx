@@ -1,11 +1,11 @@
 import styles from "./Loader.module.css";
 
 function Loader() {
-    return (
+  return (
     <div className={styles.wrapper}>
-        <div className={styles.loader}></div>
+      <div className={styles.loader}></div>
     </div>
-    );
+  );
 }
 
 export default Loader;

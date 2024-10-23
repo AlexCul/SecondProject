@@ -22,13 +22,13 @@ import Header from "/src/components/Header/Header.jsx";
 import Footer from "/src/components/Footer/Footer.jsx";
 
 export default function App() {
-  const fetchProducts = useProductsStore(state => state.fetch);
-  const fetchCategories = useCategoriesStore(state => state.fetch);
+  const fetchProducts = useProductsStore((state) => state.fetch);
+  const fetchCategories = useCategoriesStore((state) => state.fetch);
 
   useEffect(() => {
     (async () => {
-        await fetchProducts();
-        await fetchCategories();
+      await fetchProducts();
+      await fetchCategories();
     })();
   }, []);
 
@@ -43,7 +43,10 @@ export default function App() {
             <Route path="/products" element={<Products />}></Route>
             <Route path="/products/:productId" element={<Product />}></Route>
             <Route path="/categories" element={<Categories />}></Route>
-            <Route path="/categories/:categoryId" element={<Category />}></Route>
+            <Route
+              path="/categories/:categoryId"
+              element={<Category />}
+            ></Route>
             <Route path="/shopping-cart" element={<ShoppingCart />}></Route>
             <Route path="*" element={<PageNotFound />}></Route>
           </Routes>
@@ -55,7 +58,4 @@ export default function App() {
 }
 
 const root = createRoot(document.getElementById("root"));
-root.render(
-    <App />
-);
-
+root.render(<App />);

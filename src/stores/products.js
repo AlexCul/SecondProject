@@ -5,46 +5,51 @@ import { persist } from "zustand/middleware";
 
 import { get as getProducts } from "/src/services/products.js";
 
-const useProductsStore = create(devtools(persist(immer((set, get) => ({
-    products: [],
+const useProductsStore = create(
+  devtools(
+    persist(
+      immer((set, get) => ({
+        products: [],
 
-    fetch: async () => {
-        set({
+        fetch: async () => {
+          set({
             products: await getProducts(),
-        });
-    },
+          });
+        },
 
-    byCategory: (categoryId) => {
-        let byCategory = [];
+        byCategory: (categoryId) => {
+          let byCategory = [];
 
-        for (let product of get().products) {
+          for (let product of get().products) {
             if (product.categoryId == categoryId) {
-                byCategory.push(product);
+              byCategory.push(product);
             }
-        }
+          }
 
-        return byCategory;
-    },
-    byId: (id) => {
-        return get().products[id-1];
-    },
+          return byCategory;
+        },
+        byId: (id) => {
+          return get().products[id - 1];
+        },
 
-    discounted: async () => {
-        let discounted = [];
+        discounted: async () => {
+          let discounted = [];
 
-        for (let product of get().products) {
+          for (let product of get().products) {
             if (product.discountPrice != null) {
-                discounted.push(product);
+              discounted.push(product);
             }
-        }
+          }
 
-        return discounted;
-    },
-})),
+          return discounted;
+        },
+      })),
       {
         name: "products",
         getStorage: () => localStorage,
-      }
-)));
+      },
+    ),
+  ),
+);
 
 export default useProductsStore;

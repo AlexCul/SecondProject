@@ -22,32 +22,32 @@
 }
 
 .footer > .cards {
-    display: grid;
-    grid-template-columns: 780px minmax(0, 1fr);
-    gap: 32px;
-    margin: 32px 0px;
-    margin-top: 40px;
-    margin-top: 40px;
+  display: grid;
+  grid-template-columns: 780px minmax(0, 1fr);
+  gap: 32px;
+  margin: 32px 0px;
+  margin-top: 40px;
+  margin-top: 40px;
 }
 
 .footer > .cards > div {
-    background-color: var(--grey);
-    border-radius: var(--big-radius);
-    padding: 32px;
+  background-color: var(--grey);
+  border-radius: var(--big-radius);
+  padding: 32px;
 }
 
 .footer > .cards > div > h5 {
-    font-size: 20px;
-    color: var(--secondary);
-    font-weight: 500;
+  font-size: 20px;
+  color: var(--secondary);
+  font-weight: 500;
 }
 
 .footer > .cards > div > p {
-    font-size: 40px;
-    margin-top: 16px;
-    color: var(--primary);
-    font-weight: 600;
-    line-height: 44px;
+  font-size: 40px;
+  margin-top: 16px;
+  color: var(--primary);
+  font-weight: 600;
+  line-height: 44px;
 }
 
 .footer > .map {
@@ -57,11 +57,11 @@
 }
 
 @media screen and (max-width: 1100px) {
-    .footer > .cards {
-        display: block;
-    }
+  .footer > .cards {
+    display: block;
+  }
 
-    .footer > .cards > div {
-        margin-bottom: 20px;
-    }
+  .footer > .cards > div {
+    margin-bottom: 20px;
+  }
 }

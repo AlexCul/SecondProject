@@ -1,17 +1,16 @@
 .navigationRow {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .navigationRow > hr {
-    color: var(--tertiary);
-    height: 0px;
-    width: 16px;
+  color: var(--tertiary);
+  height: 0px;
+  width: 16px;
 }
 
 @media screen and (max-width: 1200px) {
-    .navigationRow {
-        display: none;
-    }
+  .navigationRow {
+    display: none;
+  }
 }
-

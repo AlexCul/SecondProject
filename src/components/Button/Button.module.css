@@ -24,7 +24,7 @@
 }
 
 .button[disabled]:hover {
-    cursor: default;
+  cursor: default;
 }
 .button {
   background-color: var(--blue);
@@ -52,5 +52,5 @@
 }
 
 .button[disabled]:hover {
-    cursor: default;
+  cursor: default;
 }

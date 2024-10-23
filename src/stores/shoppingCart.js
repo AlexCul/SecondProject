@@ -50,24 +50,25 @@ const useShoppingCartStore = create(
           return total;
         },
         totalCount: () => {
-            let total = 0;
-            Object.values(get().products).forEach((product) => total += product.count);
-            return total;
+          let total = 0;
+          Object.values(get().products).forEach(
+            (product) => (total += product.count),
+          );
+          return total;
         },
 
         clear: () => {
-            set((state) => {
-                state.products = {};
-            });
-        }
+          set((state) => {
+            state.products = {};
+          });
+        },
       })),
       {
         name: "shopping-cart",
         getStorage: () => localStorage,
-      }
-    )
-  )
+      },
+    ),
+  ),
 );
 
 export default useShoppingCartStore;
-

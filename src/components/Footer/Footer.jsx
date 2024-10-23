@@ -18,7 +18,7 @@ function Footer() {
   const Map = ({ text }) => (
     <div style={{ height: "100px" }}>
       <img src={GoogleMapMarker} width="40" />
-      <strong style={{fontSize: "16px", color: "white"}}>{text}</strong>
+      <strong style={{ fontSize: "16px", color: "white" }}>{text}</strong>
     </div>
   );
 
@@ -27,23 +27,31 @@ function Footer() {
       <h3>Contact</h3>
       <div className={styles.cards}>
         <div>
-            <h5>Phone</h5>
-            <p>+49 30 915-88492</p>
+          <h5>Phone</h5>
+          <p>+49 30 915-88492</p>
         </div>
         <div>
-            <h5>Socials</h5>
-            <p>
-                <a href="https://instagram.com" target="_blank"><img src={Instagram} /></a>
-                <a href="https://viber.com" style={{marginLeft: "16px",}} target="_blank"><img src={Viber} /></a>
-            </p>
+          <h5>Socials</h5>
+          <p>
+            <a href="https://instagram.com" target="_blank">
+              <img src={Instagram} />
+            </a>
+            <a
+              href="https://viber.com"
+              style={{ marginLeft: "16px" }}
+              target="_blank"
+            >
+              <img src={Viber} />
+            </a>
+          </p>
         </div>
         <div>
-            <h5>Address</h5>
-            <p>Wallstraẞe 9-13, 10179 Berlin, Deutschland</p>
+          <h5>Address</h5>
+          <p>Wallstraẞe 9-13, 10179 Berlin, Deutschland</p>
         </div>
         <div>
-            <h5>Working Hours</h5>
-            <p>24 hours a day</p>
+          <h5>Working Hours</h5>
+          <p>24 hours a day</p>
         </div>
       </div>
       <div className={styles.map}>

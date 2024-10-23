@@ -8,23 +8,23 @@
 }
 
 #root {
-    --header-margin-bottom: 40px;
-    --footer-margin-top: 80px;
+  --header-margin-bottom: 40px;
+  --footer-margin-top: 80px;
 
-    --small-radius: 6px;
-    --big-radius: 12px;
+  --small-radius: 6px;
+  --big-radius: 12px;
 
-    --blue: #0D50FF;
-    --grey: #F1F3F4;
-    --black: #282828;
-    --primary: #282828;
-    --secondary: #8B8B8B;
-    --tertiary: #DDDDDD;
+  --blue: #0d50ff;
+  --grey: #f1f3f4;
+  --black: #282828;
+  --primary: #282828;
+  --secondary: #8b8b8b;
+  --tertiary: #dddddd;
 }
 
 body > #root > main > *:not(.notCentered) {
-    margin-right: 40px;
-    margin-left: 40px;
+  margin-right: 40px;
+  margin-left: 40px;
 }
 
 body > #root > header {
@@ -32,12 +32,12 @@ body > #root > header {
 }
 
 body > #root > footer {
-    margin-top: var(--footer-margin-top);
+  margin-top: var(--footer-margin-top);
 }
 
 @media screen and (max-width: 768px) {
-    body > #root > main > *:not(.notCentered) {
-        margin-right: 20px;
-        margin-left: 20px;
-    }
+  body > #root > main > *:not(.notCentered) {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
 }

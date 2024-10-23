@@ -1,17 +1,18 @@
 .sectionBar {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .sectionBar > hr {
-    flex-grow: 1;
-    margin-left: 32px;
-    height: 0px;
-    color: var(--tertiary);
+  flex-grow: 1;
+  margin-left: 32px;
+  height: 0px;
+  color: var(--tertiary);
 }
 
 @media screen and (max-width: 768px) {
-    .sectionBar > hr, .sectionBar > a {
-        display: none;
-    }
+  .sectionBar > hr,
+  .sectionBar > a {
+    display: none;
+  }
 }

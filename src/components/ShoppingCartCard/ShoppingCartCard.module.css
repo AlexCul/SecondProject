@@ -1,78 +1,78 @@
 .shoppingCartCard {
-    display: flex;
-    border: 1px solid var(--tertiary);
-    border-radius: var(--big-radius);
+  display: flex;
+  border: 1px solid var(--tertiary);
+  border-radius: var(--big-radius);
 }
 
 .shoppingCartCard > img {
-    width: 200px;
-    height: 180px;
-    border-top-left-radius: var(--big-radius);
-    border-bottom-left-radius: var(--big-radius);
-    border: 1px solid var(--tertiary);
+  width: 200px;
+  height: 180px;
+  border-top-left-radius: var(--big-radius);
+  border-bottom-left-radius: var(--big-radius);
+  border: 1px solid var(--tertiary);
 }
 
 .shoppingCartCard > .content {
-    width: 100%;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 100%;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .shoppingCartCard > .content > .top {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .shoppingCartCard > .content > .top > span {
-    font-weight: 500;
-    color: var(--primary);
-    font-size: 20px;
+  font-weight: 500;
+  color: var(--primary);
+  font-size: 20px;
 }
 
 .shoppingCartCard > .content > .top > button {
-    background: transparent;
-    border: none;
+  background: transparent;
+  border: none;
 }
 .shoppingCartCard > .content > .top > button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .shoppingCartCard > .content > .bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .shoppingCartCard > .content > .bottom > Price {
-    margin-left: 32px;
+  margin-left: 32px;
 }
 
 @media screen and (max-width: 1400px) {
-    .shoppingCartCard {
-        flex-direction: column;
-        width: 250px;
-    }
+  .shoppingCartCard {
+    flex-direction: column;
+    width: 250px;
+  }
 
-    .shoppingCartCard > img {
-        width: 250px;
-        height: 100%;
-        border-bottom-left-radius: 0px;
-        border-top-right-radius: var(--big-radius);
-    }
+  .shoppingCartCard > img {
+    width: 250px;
+    height: 100%;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: var(--big-radius);
+  }
 
-    .shoppingCartCard > .content {
-        padding: 8px;
-    }
+  .shoppingCartCard > .content {
+    padding: 8px;
+  }
 
-    .shoppingCartCard > .content > .top {
-        flex-direction: column-reverse;
-        align-items: start;
-    }
+  .shoppingCartCard > .content > .top {
+    flex-direction: column-reverse;
+    align-items: start;
+  }
 
-    .shoppingCartCard > .content > .bottom {
-        flex-direction: column;
-        align-items: start;
-    }
+  .shoppingCartCard > .content > .bottom {
+    flex-direction: column;
+    align-items: start;
+  }
 }

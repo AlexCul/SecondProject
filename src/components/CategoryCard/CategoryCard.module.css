@@ -1,19 +1,19 @@
 .card {
-    max-width: 316px;
-    text-align: center;
-    display: inline-grid;
+  max-width: 316px;
+  text-align: center;
+  display: inline-grid;
 }
 
 .card > a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .card > a > img {
-    max-width: 316px;
+  max-width: 316px;
 }
 
 .card > a > span {
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 16px;
 }

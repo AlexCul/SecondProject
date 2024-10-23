@@ -29,18 +29,18 @@ header > nav > a {
 }
 
 @media screen and (max-width: 750px) {
-    header > nav {
-        flex-direction: column;
-        padding: 8px 0px;
-    }
+  header > nav {
+    flex-direction: column;
+    padding: 8px 0px;
+  }
 
-    .links {
-        flex-direction: column;
-        width: 100%;
-    }
+  .links {
+    flex-direction: column;
+    width: 100%;
+  }
 
-    .links > a {
-        font-size: 24px;
-        margin-bottom: 8px;
-    }
+  .links > a {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
 }

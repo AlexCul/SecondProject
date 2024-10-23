@@ -1,25 +1,25 @@
 section.shoppingCart {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 section.shoppingCart > .cards {
-    width: 780px;
+  width: 780px;
 }
 
 section.shoppingCart > .cards > div {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 @media screen and (max-width: 1400px) {
-    section.shoppingCart {
-        flex-direction: column;
-    }
+  section.shoppingCart {
+    flex-direction: column;
+  }
 
-    section.shoppingCart > .cards {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        grid-gap: 16px;
-    }
+  section.shoppingCart > .cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 16px;
+  }
 }
